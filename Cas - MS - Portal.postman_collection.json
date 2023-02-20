@@ -1,0 +1,199 @@
+{
+	"info": {
+		"_postman_id": "7c89fc2e-12f4-4f8c-be57-933957b2db8a",
+		"name": "Cas - MS - Portal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12572496"
+	},
+	"item": [
+		{
+			"name": "Oauth2 get token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "products-client",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "secret",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:9000/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET health check",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiIzM2U2MjM3ZS04NjZjLTQzMDktOTdkNC1jODYyMzQ2NzMzYWQiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJwcm9kdWN0cy1jbGllbnQiLCJhdWQiOiJwcm9kdWN0cy1jbGllbnQiLCJuYmYiOjE2NzYwMjA5MDUsInNjb3BlIjpbInByb2R1Y3RzLnJlYWQiLCJwcm9kdWN0cy53cml0ZSJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODg4OCIsImV4cCI6MTY3NjAyMjcwNSwiaWF0IjoxNjc2MDIwOTA1fQ.qtAkQaInPdtowY43eZoI5twkOTI8R-bgWnaLHTvJ1anI_bmGtIhHeiPT_2KM0GLtzzSJKSEHyIM1z-fXXa_YkAxfdQBnlr2pDlg-mEc9E5lLmgMLN6vU4zEqYcSckWrK_GkM6aAJXcLYSJcSXcauAK1tb0xNCm33WuVhtwTITSnZQ6qxTyzConps5bpbepkswdoYrVyNa8Y_nZxpUdzV_bDASuPbdUhabTKXa7mUk42CnsbzhCfgpT9t6DtTal0cTgg2-_ru9f86p7E1G_yQ-46PG68gNADbI20Zt4Mv59137Z1sII37pBk-CgkYS4a9v--U4FJONbMsTPlWInkvkQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Oauth2 test scope",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJhMjVkNDhiOC0xYjg2LTQzMjMtOWQ4Yi02MmNjZWE1MTJiMTciLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJwcm9kdWN0cy1jbGllbnQiLCJhdWQiOiJwcm9kdWN0cy1jbGllbnQiLCJuYmYiOjE2NzY1MTUzNzYsInNjb3BlIjpbInByb2R1Y3RzLnJlYWQiLCJwcm9kdWN0cy53cml0ZSJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODg4OCIsImV4cCI6MTY3NjUxNTY3NiwiaWF0IjoxNjc2NTE1Mzc2fQ.mpI9SYPxWWkGEMccjW3OSYc2d3bAcOlG09MknT3zsftJP3LpxlkihS415GeATrYVdF8UHIHvDPf4EeQds8G0YGYFWDssNSXMi98gL3NOYE_7MMOrHAOTo2G4Wgx1pxbgtkglozF1vOBAMdPhgdyic08azD-nXgKnsuPGIVdo-X5YosV0mduVGvKgRcVKKBjqhwX0nRpA_8OjAv_4Qk092Z5fqqG7sApqcxImNIycqh4n44Ge2uWIkqQp4P_Sgu2Z9QyIlRzXP23S0ySgwaMp0xj1flTv9qvqsI4hd1wEPeJkh_8Uk0HQR0CWjKBbD6ShYuZ_fXSVdzEm-gAC6jtBpw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/test",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"test"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get GRPC client",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJhMjVkNDhiOC0xYjg2LTQzMjMtOWQ4Yi02MmNjZWE1MTJiMTciLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJwcm9kdWN0cy1jbGllbnQiLCJhdWQiOiJwcm9kdWN0cy1jbGllbnQiLCJuYmYiOjE2NzY1MTUzNzYsInNjb3BlIjpbInByb2R1Y3RzLnJlYWQiLCJwcm9kdWN0cy53cml0ZSJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODg4OCIsImV4cCI6MTY3NjUxNTY3NiwiaWF0IjoxNjc2NTE1Mzc2fQ.mpI9SYPxWWkGEMccjW3OSYc2d3bAcOlG09MknT3zsftJP3LpxlkihS415GeATrYVdF8UHIHvDPf4EeQds8G0YGYFWDssNSXMi98gL3NOYE_7MMOrHAOTo2G4Wgx1pxbgtkglozF1vOBAMdPhgdyic08azD-nXgKnsuPGIVdo-X5YosV0mduVGvKgRcVKKBjqhwX0nRpA_8OjAv_4Qk092Z5fqqG7sApqcxImNIycqh4n44Ge2uWIkqQp4P_Sgu2Z9QyIlRzXP23S0ySgwaMp0xj1flTv9qvqsI4hd1wEPeJkh_8Uk0HQR0CWjKBbD6ShYuZ_fXSVdzEm-gAC6jtBpw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/products/hello_grpc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"products",
+						"hello_grpc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Rest Api client",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJhMjVkNDhiOC0xYjg2LTQzMjMtOWQ4Yi02MmNjZWE1MTJiMTciLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJwcm9kdWN0cy1jbGllbnQiLCJhdWQiOiJwcm9kdWN0cy1jbGllbnQiLCJuYmYiOjE2NzY1MTUzNzYsInNjb3BlIjpbInByb2R1Y3RzLnJlYWQiLCJwcm9kdWN0cy53cml0ZSJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODg4OCIsImV4cCI6MTY3NjUxNTY3NiwiaWF0IjoxNjc2NTE1Mzc2fQ.mpI9SYPxWWkGEMccjW3OSYc2d3bAcOlG09MknT3zsftJP3LpxlkihS415GeATrYVdF8UHIHvDPf4EeQds8G0YGYFWDssNSXMi98gL3NOYE_7MMOrHAOTo2G4Wgx1pxbgtkglozF1vOBAMdPhgdyic08azD-nXgKnsuPGIVdo-X5YosV0mduVGvKgRcVKKBjqhwX0nRpA_8OjAv_4Qk092Z5fqqG7sApqcxImNIycqh4n44Ge2uWIkqQp4P_Sgu2Z9QyIlRzXP23S0ySgwaMp0xj1flTv9qvqsI4hd1wEPeJkh_8Uk0HQR0CWjKBbD6ShYuZ_fXSVdzEm-gAC6jtBpw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/products/hello_rest",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"products",
+						"hello_rest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health check service",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiJhMjVkNDhiOC0xYjg2LTQzMjMtOWQ4Yi02MmNjZWE1MTJiMTciLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJwcm9kdWN0cy1jbGllbnQiLCJhdWQiOiJwcm9kdWN0cy1jbGllbnQiLCJuYmYiOjE2NzY1MTYwODUsInNjb3BlIjpbInByb2R1Y3RzLnJlYWQiLCJwcm9kdWN0cy53cml0ZSJdLCJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODg4OCIsImV4cCI6MTY3NjUxNjM4NSwiaWF0IjoxNjc2NTE2MDg1fQ.vCY1gxirKIIMK3_mIUV9vIDv2dE8M4L6tXf1YuWT50lQLnuSSyIhvWMnYS7o5eJI2HB7Z6fu4aTWYUgUJDqIuirgEdNzTH-6iAAejOzxFeusphXOEaIEBfstiWmBXzkm-VjR6Ft-RfGubz_hj94JnCX8xI9XJtoogifHLZ61W4QsgYVe-B-g1mhZLASes_9drAKyNq4tbmbB4Si3FG4RML4jRMceXos70r-4bIb5Aid8aV4KXozNIHjrzfeKiveQofPwS8t_hA_4ADMnj--V0DEvIUuBYuY0bFAWGK8y5FADDD4iaKG85EShZMEgYFwzRunhlCg0SNpn9p4ZBRNtSQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
